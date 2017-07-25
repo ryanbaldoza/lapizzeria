@@ -1,0 +1,1398 @@
+/*
+	Theme Name: La Pizzeria
+	Theme URI: 
+	Author: Ryan Baldoza
+	Author URI:
+	Description: Theme for restaurants
+	Version: 1.0
+	License: GNU General Public License v2 or later
+	License URI: http:www.gnu.org/licenses/glp-2.0.html
+	Tags: restaurant, mobile first, responsive, pizza
+	Text Domain: Lapizzeria
+*/
+
+/*   GENERAL
+/* ======================================================== */
+
+html {
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	background: url('/wp-content/themes/lapizzeria/img/light_wool.png') top left repeat;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5,h6 { 
+	font-family: 'Raleway', sans-serif; 
+	font-weight: 900;
+
+}
+
+h1 {
+	font-size: 48px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 28px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/*   HELPER CLASSES
+/* ======================================================== */
+
+.content-wrapper {
+	box-shadow: 0 0 0 10px rgba(255,255,255,0.1), 0 0 10px rgba(0,0,0,0.18);
+	padding-bottom: 10px;
+	background-color: #fff;
+	/*box-shadow: -40px 30px 80px -70px #000000, 40px 30px 80px -70px #000000;*/
+}
+
+.container {
+	max-width: 1100px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.clear,
+.clear::after,
+.comment-reply-title,
+.comment-reply-title::after {
+	content:'';
+	clear: both;
+	display: block;
+}
+
+.sr-text,
+.screen-reader-text {
+	display: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.primary-text {
+	color: #a61206;
+  	overflow: hidden;
+  	position: relative;
+}
+
+.primary-text::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #a61206;
+  position: absolute;
+  top: 50%;
+  margin-left: 1rem;
+}
+
+
+.button, 
+.comment-respond form input[type=submit] {
+	background-color: #a61206;
+	font-family: 'Open-Sans', sans-serif;
+	font-size: 16px;
+	width: auto;
+	border-radius: 8px;
+	color: #fff;
+	padding: 15px 30px;
+	margin-top: 20px;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color .3s;
+}
+
+.primary {
+	background-color: #a61206;
+}
+
+.primary:hover, 
+.comment-respond form input[type=submit]:hover,
+.home .reservation-info input[type=submit]:hover {
+	background-color: #7b0d04;
+}
+
+.secondary {
+	background-color: #127427;
+	font-size: 18px;
+	transition: background-color 0.2s;
+}
+
+.secondary:hover {
+	background-color: #116523;
+}
+
+/*   HEADER
+/* ======================================================== */
+
+header.site-header {
+	border-bottom: 1px solid #e8e8e8;
+	padding: 10px;
+}
+
+div.logo {
+	text-align: center;
+}
+
+img.logo-img {
+	width: 250px;
+}
+
+address.header-address {
+	display: block;
+	clear: both;
+	padding-top: 10px;
+}
+
+address.header-address p {
+	margin: 0;
+	text-align: center;
+	font-size: 16px;
+	font-style: normal;
+	margin-top: 5px;
+	font-weight: 700;
+}
+
+
+/* ====== Social Menu ====== */
+
+nav.social-nav ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+}
+
+nav.social-nav ul li a:before {
+	font-family: 'FontAwesome';
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 5px;
+	content: '\f08e';
+	font-size: 30px;
+	color: #000;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	transition: color 0.2s;
+
+}
+
+nav.social-nav ul li {
+	position: relative;
+	display: inline-block;
+}
+
+nav.social-nav li a[href*="tel"]::before { content: '\f095';}
+nav.social-nav li a[href*="facebook.com"]::before { content: '\f09a';}
+nav.social-nav li a[href*="twitter.com"]::before { content: '\f099';}
+nav.social-nav li a[href*="instagram.com"]::before { content: '\f16d';}
+nav.social-nav li a[href*="pinterest.com"]::before { content: '\f231';}
+nav.social-nav li a[href*="youtube.com"]::before { content: '\f16a';}
+
+nav.social-nav ul li a[href*="tel"]:hover::before { color: #f19f30; }
+nav.social-nav ul li a[href*="facebook.com"]:hover::before { color: #3b5998; }
+nav.social-nav ul li a[href*="twitter.com"]:hover::before { color: #55acee; }
+nav.social-nav ul li a[href*="instagram.com"]:hover::before { color: #e95950; }
+nav.social-nav ul li a[href*="pinterest.com"]:hover::before { color: #cb2027; }
+nav.social-nav ul li a[href*="youtube.com"]:hover::before { color: #bb0000; }
+
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 768px) {
+	header.site-header .container {
+		position: relative;
+	}
+
+	header.site-header {
+		padding: 0 30px 10px;
+	}
+
+	header.site-header .header-information {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	div.logo {
+		text-align: left;
+	}
+
+
+	nav.social-nav ul {
+		float: right
+	}
+
+	address.header-address {
+		float: right;
+	}
+
+	address.header-address p {
+		text-align: right;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	div.logo {
+		text-align: center;
+	}	
+
+}
+
+/*   MAIN NAVIGATION
+/* ======================================================== */
+
+div.main-menu {
+	background: #fff;
+}
+
+nav.site-nav {
+	display: none;
+}
+
+nav.site-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: table;
+}
+
+nav.site-nav ul li a {
+	text-align: center;
+	padding: 20px 0;
+	display: block;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #000;
+	font-family: 'Raleway', sans-serif; 
+	transition: color 0.2s;
+	letter-spacing: 1px;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+nav.site-nav ul li a:hover {
+	color: #a61206;
+}
+
+nav.site-nav ul li.current_page_item a,
+.single-specialties nav.site-nav ul li.menu-item-23 a,
+.post-template-default nav.site-nav ul li.current_page_parent.menu-item-19 a {
+	border-bottom: 8px solid #a61206;
+	color: #a61206;
+}
+
+.single-specialties nav.site-nav ul li.menu-item-23 a {
+	color: #a61206;
+}
+
+nav.site-nav ul li:first-of-type {
+	display: none;
+}
+
+.page-id-76 #menu-header-menu {
+	
+}
+
+/* ====== Responsive Menu Button ====== */
+
+@media only screen and (max-width: 767px) {
+	.mobile-menu {
+		background: #fff;
+	}
+
+	.mobile-menu a {
+		height: 40px;
+		line-height: 40px;
+		text-decoration: none;
+		background-color: #a61206;
+		color: white;
+		font-size: 20px;
+		text-transform: uppercase;
+		width: 100%;
+		display: block;
+		text-align: center;
+		font-family: 'Raleway', sans-serif; 
+	}
+
+	nav.site-nav ul li.current_page_item a,
+	.single-specialties nav.site-nav ul li.menu-item-23 a,
+	nav.site-nav ul li.current_page_parent.menu-item-19 a  {
+		border-bottom: 2px solid #a61206;
+		color: #a61206;
+	}
+
+}
+
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 768px) {
+	nav.site-nav {
+		display: block;
+	}
+
+	nav.site-nav ul li {
+		display: table-cell;
+		width: 1%;
+	}
+
+	.mobile-menu a {
+		display: none;
+	}
+}
+
+
+/*   TEMPLATE
+/* ======================================================== */
+
+/* ====== Hero Image ====== */
+
+.hero {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	height: 250px;
+	display: table;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%; 
+	position: relative;
+}
+
+.hero::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.hero-text {
+	position: relative;
+}
+
+.hero-text h1 {
+	margin: 0;
+}
+
+.hero-text h5 {
+  margin: 0 40px;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 400;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+
+}
+
+.hero-text h5:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  border-width: 20px 30px;
+  border-style: solid;
+  border-color: #fff #fff transparent #fff;
+}
+
+
+.hero .hero-content {
+	display: table-cell;
+	vertical-align: middle;
+	color: #fff;
+	z-index: 2;
+	position: relative;
+}
+
+.content-text p {
+	font-size: 18px;
+	line-height: 30px;
+}
+
+
+/* ====== Main Content ====== */
+
+.main-content {
+	padding: 20px;
+	background-color: #fff;
+	position: relative;
+}
+
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 768px) {
+	.hero {
+		height: 450px;
+	}
+
+	.hero-text {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.main-content {
+		margin-top: -90px;
+		padding: 60px;
+	}
+
+	.hero-text {
+		margin-top: -90px !important;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.hero-text {
+		width: 60%;
+		margin: 0 auto;
+	}
+}
+
+/*   HOME PAGE - HERO BANNER
+/* ======================================================== */
+
+.home div.hero {
+	height: 100vh;
+	padding: 30px 0;
+}
+
+.home div.hero-text {
+	margin-bottom: 60px;
+
+}
+
+.home div.hero-content p {
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.home .main-content {
+	margin-top: -20px;
+}
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 768px) {
+	.home div.main-content {
+		
+	}
+
+	.home div.hero-content p {
+		width: 80%;
+		margin: 0 auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.home div.hero-content h1 {
+		margin-top: 60px;
+	}
+
+	.home .hero-text {
+	
+	}
+}	
+
+@media only screen and (min-width: 768px) {
+	.home div.hero-content p {
+		width: 60%;
+		margin: 0 auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}	
+}
+
+/*   HOME PAGE - HERO BANNER
+/* ======================================================== */
+
+section.promo {
+	background-color: #f19f30;
+	width: 100%;
+	min-height: 70px;
+	text-align: center;
+}
+
+.promo .promo-content {
+	padding: 10px 10px 40px;
+}
+
+.promo .promo-content h2 {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+	font-size: 36px;
+}
+
+.promo .promo-content a {
+	width: 200px;
+}
+
+@media only screen and (min-width: 768px) {
+	.promo .promo-content {
+		display: -webkit-inline-box;
+		vertical-align: middle;
+		padding: 0 60px 20px;
+	}
+
+	.promo .promo-content h2 {
+		margin: 30px;
+	}
+
+	.promo .promo-content a {
+		margin-top: 25px;
+	}
+}
+
+/*   HOME PAGE - PIZZA SPECIALS
+/* ======================================================== */
+
+.home .container-grid {
+	margin: 0;
+}
+
+.home .main-content .container-grid h2{
+	margin-top: 0;
+}
+
+.specialty-panel {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	padding: 0;
+	text-align: center;
+}
+
+.specialty-panel::after {
+  background-color: #f19f30;
+  height: 150%;
+  bottom: -145%;
+  content: attr(data-content);
+  left: 0;
+  right: 0;
+  position: absolute;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  font-size: 24px;
+  padding-top: 0;
+  font-weight: 700;
+  color: #fff;
+
+}	
+
+
+.specialty-panel * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+}
+
+.specialty-panel img {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+  object-fit: cover;
+}
+
+.specialty-panel .information {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1em;
+  opacity: 0;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  padding: 10px;
+}
+
+
+.specialty-panel:hover > img,
+.specialty-panel.hover > img {
+  opacity: 0.1;
+}
+
+.specialty-panel:hover:after,
+.specialty-panel.hover:after {
+  bottom: 95%;
+}
+
+.specialty-panel:hover .information,
+.specialty-panel.hover .information {
+  opacity: 1;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.specialty-panel .information .price {
+	font-size: 36px;
+	font-weight: 700;
+	margin: 0 0 10px 0;
+	color: #f19f30;
+}
+
+.specialty-panel .information h3 {
+	font-size: 30px;
+	margin-top: 40px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.specialty-panel .information p {
+	margin: 15px 0;
+	line-height: 24px;
+}
+
+.specialty-panel .information a {
+	color: #fff;
+}
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 767px) {
+	.specialty-panel:after {
+		font-size: 20px;
+		height: 160%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.specialty-panel:after {
+		font-size: 30px;
+		height: 162%;
+		padding-top: 14px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.specialty-panel {
+		margin-bottom: 30px;
+	}
+
+	.specialty-panel:after {
+		font-size: 36px;
+		height: 165%;
+		padding-top: 20px;
+	}
+}
+
+
+/*   HOME PAGE - LOCATION AND RESERVATION
+/* ======================================================== */
+
+.location-reservation {
+	margin-top: 50px;
+	background-image: url(img/bg_ingredients.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.location-reservation .container-grid {
+	margin: 0;
+}
+
+.location-reservation .container-grid .map-col {
+	padding: 0 !important;
+}
+
+.home .reservation-info {
+	margin: 0;
+	padding: 30px 20px;
+}
+
+.home .reservation-info h3 {
+	color: #fff;
+	margin-top: 0;
+}
+
+.home .reservation-info h3::after {
+	background-color: #fff;
+}
+
+.home .reservation-info input, 
+.home .reservation-info textarea {
+	background-color: transparent;
+	border: 4px solid #fff;
+	color: #fff;
+}
+
+.home .reservation-info input[type=submit] {
+	background-color: #a61206;
+	border: none;
+	margin-top: 0;
+
+}
+
+.home form.reservation-form ::-webkit-input-placeholder {
+	color: #fff; 
+}
+
+.home form.reservation-form ::-moz-placeholder  {
+	color: #fff; 
+}
+
+.home form.reservation-form :-moz-placeholder {
+	color: #fff; 
+}
+ 
+.home form.reservation-form ::-ms-input-placeholder {
+	color: #fff; 
+}
+
+#map {
+	height: 109vh;
+	padding: 0;
+}
+
+
+
+
+/*   ABOUT US BOXES
+/* ======================================================== */
+
+.box-information {
+	margin: 0 10px;
+	position: relative;
+}
+
+.box-information .single-box {
+	text-align: center;
+	width: 100%;
+	color: #fff;
+
+}
+
+.box-information .single-box img { 
+	width: 100%; 
+	display: block;
+}
+
+.box-information .single-box h3 {
+	font-weight: 700;
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.box-information .single-box p { 
+	margin-bottom: 0;
+	font-size: 14px; 
+	margin-top: 5px;
+}
+
+.box-information .single-box:nth-child(1) {
+	background-color: #f19f30;
+}
+
+.box-information .single-box:nth-child(2) {
+	background-color: #127427;
+}
+
+.box-information .single-box:nth-child(3) {
+	background-color: #a61206;
+}
+
+.single-box .content-box {
+	padding: 10px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 480px) {
+	.box-information .single-box {
+		width: 50%;
+		float: left;
+	}
+
+	.box-information .single-box:last-child {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.box-information .single-box,
+	.box-information .single-box:last-child {
+		width: 33.3333%;
+	}
+
+
+}
+
+@media only screen and (min-width: 992px) {
+	.box-information .single-box h3 {
+		font-size: 24px;
+	}
+}
+
+/*   SPECIALTIES
+/* ======================================================== */
+
+.our-specialties {
+	background-color: #fff;	
+}
+
+.specialty-content {
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+.specialty-content a {
+	color: #3d3d3d;
+	text-decoration: none;
+}
+
+.specialty-content h4 {
+	border-bottom: 1px solid #dfdfdd;
+	padding: 15px 0;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.specialty-content h4 span {
+	float: right;
+	color: #f19f30;
+	font-family: 'Open-Sans', sans-serif;
+}
+
+.specialty-content p {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+/* ====== Single Page ====== */
+
+.single-specialties p.ingredients,
+.single-specialties p.price {
+	color: #a61206;
+	font-size: 30px;
+	margin: 0;
+}
+
+.single-specialties p.price span {
+	color: #000;
+}
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 768px) {
+	.our-specialties {
+		padding: 0 60px;
+	}
+}
+
+/*   BLOG
+/* ======================================================== */
+
+article.entry {
+	margin-top: 30px;
+}
+
+header.entry-header {
+	margin-top: 20px;
+}
+
+header.entry-header .date,
+.entry-information .date {
+	background: #f19f30;
+	float: left;
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	padding-top: 5px;
+	margin-right: 20px;
+}
+
+header.entry-header .date time,
+.entry-information .date time {
+	font-size: 30px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+header.entry-header .date time span {
+	font-size: 16px;
+	display: block;
+	text-transform: uppercase;
+}
+
+header.entry-header .entry-title {
+	float: right;
+	width: calc(100% - 90px); 
+}
+
+header.entry-header h2 {
+	margin: 0;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: 700; 
+}
+
+header.entry-header p.author,
+.entry-information p.author {
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.entry-information{
+	margin: 30px 0;
+}
+
+p.author i {
+	font-size: 30px;	
+	color: #f19f30;	
+}
+
+div.entry-content p {
+	margin-bottom: 0;
+	line-height: 30px;
+}
+
+/*   COMMENTS
+/* ======================================================== */
+
+ol.commentlist {
+	list-style: none;
+}
+
+ol.commentlist li.comment {
+	background-color: rgba(0,0,0,.03);
+	padding: 20px;
+	margin-bottom: 10px;
+	list-style: none;
+	border-radius: 3px;
+}
+
+ol.commentlist li.comment cite {
+	color: #a61206;
+	font-size: 16px;
+	font-weight: 700; 
+	position: relative;
+	margin-top: -10px;
+}
+
+li.comment .comment-author {
+	margin-bottom: 10px;
+}
+
+div.comment-author.vcard {
+	display: inline;
+}
+
+div.comment-author.vcard img {
+	vertical-align: middle;
+}
+
+div.comment-meta.commentmetadata{
+	float: right;
+	margin-top: 10px;
+}
+
+
+/* ====== Comment Form ====== */
+
+.comment-respond h3 {
+	font-weight: 700;
+}
+
+.comment-respond .comment-notes {
+	text-align: center;
+	font-size: 14px;
+}
+
+.comment-respond form label {
+	width: 100px;
+	display: block;
+	text-align: left;
+	padding-right: 20px;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.comment-respond form input,
+.comment-respond form textarea {
+	padding: 10px;
+	width: 100%;
+}
+
+.comment-respond form input[type=submit] {
+	margin: 0 auto;
+	display: block;
+	border: none;
+}
+
+p.logged-in-as {
+   text-align: right;
+}
+
+#cancel-comment-reply-link {
+	font-size: 16px;
+	font-weight: 700;
+	float: left;
+	padding-top: 10px;
+}
+
+li.comment a,
+p.logged-in-as a,
+#cancel-comment-reply-link,
+#reply-title > a {
+   color: #a61206;
+   text-decoration: none;
+   transition: all .2s ease;
+   border-bottom: 1px solid transparent;
+}
+
+li.comment a:hover,
+p.logged-in-as a:hover,
+#cancel-comment-reply-link:hover,
+#reply-title > a:hover {
+	border-bottom: 1px solid #a61206;
+}
+
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 420px) {
+	#cancel-comment-reply-link {
+		float: right;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	div.comments {
+		width: 80%;
+		margin-left: 10%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	div.comments {
+		width: 60%;
+		margin-left: 20%;
+	}
+}
+
+/*   GALLERY
+/* ======================================================== */
+
+.gallery .gallery-item{
+	width: 50% !important;
+	margin: 0 !important; 
+	padding: 4px 5px !important;
+}
+
+.gallery-item img {
+	border: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+	.gallery .gallery-item{
+		width: 25% !important;
+		margin: 0; 
+	}
+}
+
+/*   RESERVATION
+/* ======================================================== */
+.reservation {
+	background-image: url(img/bg_contact.jpg);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.reservation::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.8);
+}
+
+.reservation-info {
+	z-index: 2;
+	position: relative;
+}
+
+form.reservation-form .field{
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+form.reservation-form .field input,
+form.reservation-form .field textarea {
+	width: 100%;
+	padding: 15px 10px;
+}
+
+form.reservation-form .field textarea {
+	height: 200px; 
+}
+
+form.reservation-form ::-webkit-input-placeholder {
+	color: #000; 
+}
+
+form.reservation-form ::-moz-placeholder  {
+	color: #000; 
+}
+
+form.reservation-form :-moz-placeholder {
+	color: #000; 
+}
+
+form.reservation-form ::-ms-input-placeholder {
+	color: #000; 
+}
+
+form.reservation-form input[type=submit] {
+	border: none;
+}
+
+@media only screen and (min-width: 768px) {
+	.reservation-info {
+		margin-left: 50%;
+	}
+
+	.reservation::after {
+		background-color: rgba(255,255,255,0);
+	}
+}
+
+/*   SIDEBAR
+/* ======================================================== */
+
+.sidebar .widget {
+	margin-bottom: 20px;
+}
+
+.sidebar .widget h3 {
+	font-size: 24px;
+}
+
+.sidebar .widget ul {
+	list-style: none;
+}
+
+.sidebar .widget ul li {
+	margin-bottom: 10px;
+}
+
+.sidebar .widget ul li a {
+	color: #000;
+	text-decoration: none;
+	transition: all .2s;
+}
+
+.sidebar .widget ul li a:hover {
+	color: #f19f30;
+	margin-left: 1px;
+}
+
+/* ====== Search ====== */
+
+aside.sidebar {
+	margin-top: 3px;
+}
+
+form.searchform {
+	position: relative;
+}
+
+form.searchform #searchsubmit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 42px;
+	height: 42px;
+	background-color: #a61206;
+	text-indent: -9999px;
+	background-image: url(img/search.png); 
+	background-repeat: no-repeat;
+	background-position: center center;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+form.searchform #searchsubmit:hover {
+	background-color: #7b0d04;
+}
+
+form.searchform #s {
+	width: 100%;
+	padding: 10px;
+}
+
+
+
+/*   FOOTER
+/* ======================================================== */
+
+footer {
+	margin-top: 120px;
+	padding: 30px 0 0;
+	border-top: 1px solid #e8e8e8; 
+	text-align: center;
+	background: #fff;
+}
+
+.footer-logo {
+	position: relative;
+	margin-top: -102px;
+}
+
+.footer-logo-img {
+	width: 180px;
+}
+
+footer nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+footer nav ul li {
+	padding: 10px 0;
+}
+
+
+footer nav ul li a {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 16px;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+footer nav ul li a:hover {
+	color: #a61206;
+}
+
+footer nav ul li.current_page_item a,
+.single-specialties footer nav ul li.menu-item-23 a, 
+.post-template-default footer nav ul li.current_page_parent.menu-item-19 a {
+	border-bottom: 1px solid #a61206;
+	color: #a61206;
+}
+
+.footer-address {
+	margin-bottom: 30px;
+	font-style: normal;
+}
+
+footer p {
+	margin: 0 0 5px 0;
+	font-size: 16px;
+}
+
+footer p.copyright {
+	font-size: 14px;
+	margin-top: 0;
+	background-color: #a61206;
+	padding: 10px 0;
+	margin-bottom: 0;
+	color: #fff;
+
+}
+
+footer nav ul li.menu-item-88 {
+	display: none;
+}
+
+/* ====== Media Queries ====== */
+
+@media only screen and (min-width: 510px) {
+	footer nav ul li {
+		display: inline;	
+	}
+
+	footer nav ul li .separator {
+		visibility: visible;
+	}
+
+	footer nav ul li:last-child .separator {
+		display: none;
+	}
+
+	footer nav.social-nav ul {
+		float: none;
+	}
+
+}
+
+/*   GRID
+/* ======================================================== */
+
+
+@media only screen and (min-width: 768px) {
+	.container-grid {
+		margin-left: 10px;
+		margin-right: -10px;
+	}
+
+	.container-grid::after {
+		content:'';
+		display: block;
+		clear: both;
+	}
+
+	div[class*=columns],
+	main[class*=columns],
+	aside[class*=columns] {
+		float: left;
+		padding: 0 10px;
+		
+	}
+
+	.columns1-4 { width: 25%; }
+	.columns2-4 { width: 50%; }
+	.columns3-4 { width: 75%; }
+
+	.columns1-3 { width: 33.3333%; }
+	.columns2-3 { width: 66.6666%; }
+}
